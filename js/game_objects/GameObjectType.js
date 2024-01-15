@@ -3,9 +3,10 @@
 (function(){
 
 var gameObjectType = {
+    GameObject: 0,
     AlienShip: 1,
     PlayerShip: 2,
-    PlayerShipMissle: 3,
+    PlayerShipMissile: 3,
     GroundObject: 4,
 };
 
