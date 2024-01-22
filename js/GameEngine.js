@@ -2,19 +2,19 @@
 
 // логика игры. набор вычислений для следующего кадра
 (function () {
-    var GameEngine = function (gameSettings) {
+    var GameEngine = function (gameSettings, render) {
         this.__isGameOver = false;
         this.__isWin = false;
         this.__scene = new window.Scene(gameSettings);
-        this.__sceneRender = new window.SceneRender(gameSettings);
+        this.__sceneRender = render;
         this.__id = 0;
         this.__swarmMoveCounter = 0;
         this.__gameSpeed = gameSettings.GameSpeed;
 
-        //TODO отработка нажатий клавиш
+        //отработка нажатий клавиш
         var appl = this;
         document.body.addEventListener('keydown', function (evt) {
-            // alert(event.keyCode);
+            //alert(event.keyCode);
             switch (evt.keyCode) {
                 case 37: //left arrow
                     appl.MovePlayerShipLeft();
